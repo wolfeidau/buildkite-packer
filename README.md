@@ -1,6 +1,6 @@
 # buildkite-packer
 
-This project contains a simple [packer](https://www.packer.io/) configuration which builds an AMI for the [buildkite-agent](https://buildkite.com/docs/agent/installation) using [ubuntu](http://ubuntu.com) base image.
+This project contains a simple [packer](https://www.packer.io/) configuration which builds an AMI for the [buildkite-agent](https://buildkite.com/docs/agent/installation) and [docker](https://www.docker.com/), using [ubuntu](http://ubuntu.com) as the base image.
 
 # usage
 
