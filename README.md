@@ -12,6 +12,14 @@ Ensure you have your `AWS_ACCESS_KEY` and `AWS_SECRET_KEY` exported as env varia
 make
 ```
 
+To use the AMI, when setting up a new EC2 host use the following `user-data`.
+
+```bash
+#!/bin/bash
+sed -i "s/xxx/YOUR_KEY_HERE/g" /etc/buildkite-agent/buildkite-agent.cfg
+service buildkite-agent start
+```
+
 # License
 
 Released by Mark Wolfe under MIT license.
