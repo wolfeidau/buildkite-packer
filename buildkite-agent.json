@@ -26,8 +26,10 @@
             "sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 32A37959C2FA5C3C99EFBC32A79206696452D198",
             "sleep 3",
             "sudo apt-get update",
-            "sudo apt-get install -y -q lxc-docker buildkite-agent",
-            "sudo usermod -aG docker ubuntu"
+            "sudo sh -c 'curl -L https://github.com/wolfeidau/coffer/releases/download/v1.1.0/coffer_1.1.0_linux_x86_64.tgz | tar xvzf - -C /usr/local/bin'",
+            "sudo apt-get install -y -q lxc-docker buildkite-agent make",
+            "sudo usermod -aG docker ubuntu",
+            "sudo usermod -aG docker buildkite-agent"
          ]
       }
    ]
