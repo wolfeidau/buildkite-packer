@@ -20,14 +20,14 @@
          "type" : "shell",
          "inline" : [
             "sleep 30",
-            "sudo sh -c 'echo deb https://get.docker.com/ubuntu docker main > /etc/apt/sources.list.d/docker.list'",
-            "sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9",
+            "sudo sh -c 'echo deb https://apt.dockerproject.org/repo ubuntu-trusty main > /etc/apt/sources.list.d/docker.list'",
+            "sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D",
             "sudo sh -c 'echo deb https://apt.buildkite.com/buildkite-agent stable main > /etc/apt/sources.list.d/buildkite-agent.list'",
             "sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 32A37959C2FA5C3C99EFBC32A79206696452D198",
             "sleep 3",
             "sudo apt-get update",
             "sudo sh -c 'curl -L https://github.com/wolfeidau/coffer/releases/download/v1.1.0/coffer_1.1.0_linux_x86_64.tgz | tar xvzf - -C /usr/local/bin'",
-            "sudo apt-get install -y -q lxc-docker buildkite-agent make",
+            "sudo apt-get install -y -q docker-engine buildkite-agent make",
             "sudo usermod -aG docker ubuntu",
             "sudo usermod -aG docker buildkite-agent"
          ]
