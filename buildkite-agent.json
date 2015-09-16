@@ -9,10 +9,10 @@
          "access_key" : "{{user `aws_access_key`}}",
          "ami_name" : "buildkite-agent {{timestamp}}",
          "ssh_username" : "ubuntu",
-         "instance_type" : "t1.micro",
+         "instance_type" : "t2.micro",
          "type" : "amazon-ebs",
          "region" : "us-west-2",
-         "source_ami" : "ami-6989a659"
+         "source_ami" : "ami-5189a661"
       }
    ],
    "provisioners" : [
@@ -26,7 +26,7 @@
             "sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 32A37959C2FA5C3C99EFBC32A79206696452D198",
             "sleep 3",
             "sudo apt-get update",
-            "sudo sh -c 'curl -L https://github.com/wolfeidau/coffer/releases/download/v1.1.0/coffer_1.1.0_linux_x86_64.tgz | tar xvzf - -C /usr/local/bin'",
+            "sudo sh -c 'curl -L https://github.com/wolfeidau/coffer/releases/download/v2.0.0/coffer_2.0.0_linux_x86_64.tgz | tar xvzf - -C /usr/local/bin'",
             "sudo apt-get install -y -q docker-engine buildkite-agent make",
             "sudo usermod -aG docker ubuntu",
             "sudo usermod -aG docker buildkite-agent"
