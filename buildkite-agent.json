@@ -1,7 +1,9 @@
 {
    "variables" : {
       "aws_access_key" : "",
-      "aws_secret_key" : ""
+      "aws_secret_key" : "",
+      "aws_region": "us-west-2",
+      "source_ami": "ami-69631053"
    },
    "builders" : [
       {
@@ -11,8 +13,8 @@
          "ssh_username" : "ubuntu",
          "instance_type" : "t2.micro",
          "type" : "amazon-ebs",
-         "region" : "us-west-2",
-         "source_ami" : "ami-5189a661"
+         "region" : "{{user `aws_region`}}",
+         "source_ami" : "{{user `source_ami`}}"
       }
    ],
    "provisioners" : [
@@ -29,7 +31,10 @@
             "sudo sh -c 'curl -L https://github.com/wolfeidau/coffer/releases/download/v2.0.0/coffer_2.0.0_linux_x86_64.tgz | tar xvzf - -C /usr/local/bin'",
             "sudo apt-get install -y -q docker-engine buildkite-agent make",
             "sudo usermod -aG docker ubuntu",
-            "sudo usermod -aG docker buildkite-agent"
+            "sudo usermod -aG docker buildkite-agent",
+            "curl -L https://raw.githubusercontent.com/spotify/docker-gc/master/docker-gc > docker-gc",
+            "sudo mv docker-gc /etc/cron.hourly/docker-gc",
+            "sudo chmod +x /etc/cron.hourly/docker-gc"
          ]
       }
    ]
