@@ -29,7 +29,7 @@
             "sleep 3",
             "sudo apt-get update",
             "sudo sh -c 'curl -L https://github.com/wolfeidau/coffer/releases/download/v2.0.0/coffer_2.0.0_linux_x86_64.tgz | tar xvzf - -C /usr/local/bin'",
-            "sudo apt-get install -y -q docker-engine buildkite-agent make",
+            "sudo apt-get install -y -q docker-engine buildkite-agent make unzip wget",
             "sudo usermod -aG docker ubuntu",
             "sudo usermod -aG docker buildkite-agent",
             "curl -L https://raw.githubusercontent.com/spotify/docker-gc/master/docker-gc > docker-gc",
