@@ -34,7 +34,9 @@
             "sudo usermod -aG docker buildkite-agent",
             "curl -L https://raw.githubusercontent.com/spotify/docker-gc/master/docker-gc > docker-gc",
             "sudo mv docker-gc /etc/cron.hourly/docker-gc",
-            "sudo chmod +x /etc/cron.hourly/docker-gc"
+            "sudo chmod +x /etc/cron.hourly/docker-gc",
+            "sudo sh -c 'curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'",
+            "sudo chmod +x /usr/local/bin/docker-compose"
          ]
       }
    ]
